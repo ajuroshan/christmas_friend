@@ -33,5 +33,3 @@ for i in range(0 , len(number_list1)):
     result.append([shuffle_1[i], shuffle_2[i]])
 
 
-print(result)
-
