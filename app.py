@@ -25,18 +25,19 @@ def login():
     print(phonenumber)
     print(password)
 
-    if phonenumber in christmasfriend.dictionary:
-        if christmasfriend.dictionary[phonenumber]["Password"] == password:
+    if phonenumber in christmasfriend.correctData:
+        if christmasfriend.correctData[phonenumber]["Password"] == password:
             return redirect("/ourpage")
         else:
             print("incorrect password")
     else:
         print("Does not exist")
+    return "ERROR"
 
 
 @app.route("/ourpage")
 def ourpage():
-    return christmasfriend.dictionary[phonenumber]
+    return christmasfriend.shuffledData[phonenumber]
 
 
 if __name__ == "__main__":
