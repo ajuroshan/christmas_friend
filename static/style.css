@@ -1,0 +1,16 @@
+body {
+    background-color: #0B0D1B;
+
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .imagebox {
+    min-width: 100px;
+    min-height: 100px;
+  }
+

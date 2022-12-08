@@ -40,11 +40,7 @@ FinalShuffledData = {}
 for i in range(len(GoogleFormDataNumbers)):
     FinalShuffledData[GoogleFormDataNumbers[i]] = ShuffledData[i]
 
-print(googleFormData)
-print(Data)
-print(GoogleFormDataNumbers)
-print(FinalShuffledData["1839280640"])
-print(FinalRealData["1839280640"]["Name"])
+print(FinalRealData["1839280640"]["Password"])
 
 
 
@@ -59,7 +55,7 @@ def gfg():
         # getting input with name = lname in HTML form
         password = request.form.get("lname")
         return redirect("/login")
-    return render_template("login.html")
+    return render_template("index.html")
 
 
 @app.route("/login")
@@ -67,8 +63,8 @@ def login():
     print(phonenumber)
     print(password)
 
-    if phonenumber in FinalShuffledData:
-        if FinalShuffledData[phonenumber]["Password"] == password:
+    if phonenumber in FinalRealData:
+        if FinalRealData[phonenumber]["Password"] == password:
             return redirect("/ourpage")
         else:
             print("incorrect password")
