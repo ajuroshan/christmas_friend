@@ -52,7 +52,7 @@ test_dict = {"gfg": 1, "is": 7, "best": 8,
              "for": 3, "geeks": 9}
 
 # printing original dictionary
-print("The original dictionary is : " + str(correctData))
+# print("The original dictionary is : " + str(correctData))
 
 # shuffling values
 temp = list(correctData.values())
@@ -62,7 +62,7 @@ random.shuffle(temp)
 res = dict(zip(correctData, temp))
 
 # printing result
-print("The shuffled dictionary : " + str(res))
+# print("The shuffled dictionary : " + str(res))
 
 my_list = list(res.values())
 
