@@ -1,29 +1,43 @@
 from flask import Flask, render_template, request, redirect
 import christmasfriend
 
-
 app = Flask(__name__)
+phonenumber = None
+password = None
 
-@app.route("/")
-@app.route('/home')
-def homepage():
-    return "<p>This is the homepage</p>"
-    # return render_template('index.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods =["GET", "POST"])
+def gfg():
+
+    if request.method == "POST":
+        global phonenumber
+        global password
+        # getting input with name = fname in HTML form
+        phonenumber = request.form.get("fname")
+        # getting input with name = lname in HTML form
+        password = request.form.get("lname")
+        return redirect("/login")
+    return render_template("login.html")
+
+
+@app.route("/login")
 def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
+    print(phonenumber)
+    print(password)
+
+    if phonenumber in christmasfriend.dictionary:
+        if christmasfriend.dictionary[phonenumber]["Password"] == password:
+            return redirect("/ourpage")
         else:
-            return redirect(url_for('home'))
-    return render_template('login.html', error=error)
-@app.route("/data")
-def data():
-    return "<p>here will be the data</p>"
+            print("incorrect password")
+    else:
+        print("Does not exist")
+
+
+@app.route("/ourpage")
+def ourpage():
+    return christmasfriend.dictionary[phonenumber]
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
-
+    app.run(debug=True)
