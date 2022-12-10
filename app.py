@@ -45,6 +45,8 @@ for i in range(len(GoogleFormDataNumbers)):
 @app.route('/', methods =["GET", "POST"])
 def gfg():
 
+    message = "Enter your Phone Number and Password "
+
     if request.method == "POST":
         # getting input with name = fname in HTML form
         phonenumber = request.form.get("fname")
@@ -55,11 +57,13 @@ def gfg():
             if FinalRealData[phonenumber]["Password"] == password:
                 return render_template("result.html", **FinalShuffledData[phonenumber])
             else:
-                print("incorrect password")
+                message = "Incorrect password. If you forgot your password please check your mail we have send a copy of your form responce to your mail."
+                render_template("index.html", message = message )
 
-    else:
-        print("Does not exist")
-    return render_template("index.html",)
+        else:
+            message = "You have not registered for Christmas Friend."
+            render_template("index.html", message = message )
+    return render_template("index.html", message = message )
 
 
 
