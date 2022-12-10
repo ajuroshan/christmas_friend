@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+
+    <body bgcolor = "#0c0d1b">
+
+    <div class = "p-4 flex justify-center align-center h-60">
+        <img src = "{{ url_for('static',filename='Friend.png') }}" alt=" Your Christmas Friend Is "> 
+    </div> 
+
+    <div class = "flex justify-center align-center mt-6">
+        <div class = "flex justify-center align-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"> Name : &nbsp {{ Name }} </div>
+        </div>
+    
+        <div class = "flex justify-center align-center mt-6">
+        <div class = "flex justify-center align-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"> Branch : &nbsp {{ Branch }} </div>
+        </div>
+    
+        <div class = "flex justify-center align-center mt-6">
+        <div class = "flex justify-center align-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105">Phone No : &nbsp {{ Phone }} </div>
+        </div>
+        
+        
+
+        </body>
+        </html>

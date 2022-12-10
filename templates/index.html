@@ -1,24 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christmas Friend</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static',filename='style.css') }}"
-    />
-  </head>
+<html>
+    <head>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
 
-  <body>
-    <div class="flex-container">
-      <div class="imagebox "></div>
-      <div class="imagebox">
-        <img src="{{ url_for('static',filename='santa.png') }}" alt="" />
-      </div>
-      <div class="imagebox"></div>
+    <body bgcolor = "#030514">
+
+    <div class = "p-4 flex justify-center align-center h-60">
+    <img src = "{{ url_for('static',filename='christmasfriend.png') }}" alt=" Christmas Friend"> 
+    </div> <br><br>
+
+    <div class = "flex justify-center align-center h-60">
+    <img src = "{{ url_for('static',filename='santa.png') }}" alt ="Santa">
     </div>
-  </body>
-</html>
+    <br><br>
+
+
+    
+    <form action="{{ url_for("gfg")}}" method="post" class="formbox">
+        <div class = "flex justify-center align-center mt-6">
+        <input
+          class = "flex justify-center align-center text-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"
+          type="text"
+          id="firstname"
+          name="fname"
+          placeholder="Phone Number"
+        />
+    </div>
+    <div class = "flex justify-center align-center mt-6">
+        <input class = "flex justify-center align-center text-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105" type="password" id="lastname" name="lname" placeholder="Password" />
+    </div>
+    <div class = "flex justify-center align-center mt-6 p-4">
+        <button class = "flex justify-center align-center text-center bg-gray-900 h-12 p-4 text-white text-base w-48 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105" type="submit">Login</button>
+    </div>
+
+
+    <!-- <div class = "flex justify-center align-center mt-6">
+    <div class = "flex justify-center align-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"> <input
+        type="text"
+        id="firstname"
+        name="fname"
+        placeholder="Phone Number"
+      /> </div>
+    </div> -->
+
+    <!-- <div class = "flex justify-center align-center mt-6">
+    <div class = "flex justify-center align-center bg-gray-900 h-14 p-4 text-white text-base w-1/2 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"> <input type="password" id="lastname" name="lname" placeholder="Password" /> </div>
+    </div> -->
+
+    <!-- <div class = "flex justify-center align-center mt-6 p-4">
+    <div class = "flex justify-center align-center bg-gray-900 h-12 p-4 text-white text-base w-48 rounded-3xl cursor-pointer transform transition-all duration-100 hover:scale-105"><button type="submit">Login</button>  </div>
+    </div> -->
+
+    </body>
+    
+    </html>

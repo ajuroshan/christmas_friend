@@ -40,42 +40,27 @@ FinalShuffledData = {}
 for i in range(len(GoogleFormDataNumbers)):
     FinalShuffledData[GoogleFormDataNumbers[i]] = ShuffledData[i]
 
-print(FinalRealData["1839280640"]["Password"])
-
 
 
 @app.route('/', methods =["GET", "POST"])
 def gfg():
 
     if request.method == "POST":
-        global phonenumber
-        global password
         # getting input with name = fname in HTML form
         phonenumber = request.form.get("fname")
         # getting input with name = lname in HTML form
         password = request.form.get("lname")
-        return redirect("/login")
-    return render_template("index.html")
 
+        if phonenumber in FinalRealData:
+            if FinalRealData[phonenumber]["Password"] == password:
+                return render_template("result.html", **FinalShuffledData[phonenumber])
+            else:
+                print("incorrect password")
 
-@app.route("/login")
-def login():
-    print(phonenumber)
-    print(password)
-
-    if phonenumber in FinalRealData:
-        if FinalRealData[phonenumber]["Password"] == password:
-            return redirect("/ourpage")
-        else:
-            print("incorrect password")
     else:
         print("Does not exist")
-    return "ERROR"
+    return render_template("index.html",)
 
-
-@app.route("/ourpage")
-def ourpage():
-    return FinalShuffledData[phonenumber]
 
 
 if __name__ == "__main__":
