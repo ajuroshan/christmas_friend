@@ -1,10 +1,4 @@
-Timestamp,Name,Branch,Phone,Password
-1987-11-03,Sufiyan,IT,6303573286,1234
-1983-05-06,Sudev,EC,8921022889,1234
-1922-02-28,Ajmal Roshan,EC,9746986389,1234
-1987-11-03,Abhiram,CS,9061892761,1234
-1987-11-03,Zadfar,IT,9605911291,1234
-1987-11-03,Ishika Ishani,CS,8809702484,1234
-1987-11-03,Akhil,EC,6282785466,1234
-1987-11-03,Shibin,SF,9995953066,1234
-1987-11-03,Aquib,EC,9495402793,1234
+Timestamp,Name,Branch,Phone,Password,Username
+2022/12/16 12:42:12 am GMT+5:30,Ajmal Roshan ,EC,9746986389,11223344,ajuaju0483@gmail.com
+2022/12/16 12:41:06 am GMT+5:30,Akhil,EC,9539269675,1234,akhil2thanikkal@gmail.com
+2022/12/16 12:44:00 am GMT+5:30,Zadfar,IT,9605911291,Zadfar,zadfarzubair55@gmail.com

@@ -66,7 +66,7 @@ res = dict(zip(correctData, temp))
 
 my_list = list(res.values())
 
-field_names = ['Timestamp', 'Name', 'Branch', 'Phone', 'Password']
+field_names = ['Timestamp', 'Name', 'Branch', 'Phone', 'Password','Username']
 
 with open('FinalResult.csv', 'w') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=field_names)
