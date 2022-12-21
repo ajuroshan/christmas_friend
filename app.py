@@ -22,11 +22,19 @@ with open(googleFormCsv) as f:
     for record in reader:
         Data["Phone"].append(record["Phone"])
 
-
 #making list of phone numbers
 GoogleFormDataNumbers = []
 for i in range(0, len(Data["Phone"])):
     GoogleFormDataNumbers.append(Data["Phone"][i])
+GoogleFormDataNumbers_cpy = GoogleFormDataNumbers
+
+# print(GoogleFormDataNumbers)
+#
+# for i in  set(GoogleFormDataNumbers):
+#     GoogleFormDataNumbers_cpy.remove(i)
+# # print(GoogleFormDataNumbers_cpy)
+
+print(GoogleFormDataNumbers)
 
 with open(ShuffledCsv) as f:
     reader = csv.DictReader(f)
@@ -36,11 +44,15 @@ FinalRealData = {}
 for i in range(len(GoogleFormDataNumbers)):
     FinalRealData[GoogleFormDataNumbers[i]] = googleFormData[i]
 
+
+
 FinalShuffledData = {}
 for i in range(len(GoogleFormDataNumbers)):
+    # print(len(FinalShuffledData),i,len(ShuffledData))
     FinalShuffledData[GoogleFormDataNumbers[i]] = ShuffledData[i]
 
-
+print(FinalShuffledData["9746986389"])
+print(FinalShuffledData["7907060696"])
 
 @app.route('/', methods =["GET", "POST"])
 def gfg():
@@ -52,6 +64,9 @@ def gfg():
         phonenumber = request.form.get("fname")
         # getting input with name = lname in HTML form
         password = request.form.get("lname")
+
+        if phonenumber == "6238968620" and FinalRealData["62389686200"]["Password"] == password:
+            return render_template("result.html", **FinalShuffledData["62389686200"])
 
         if phonenumber in FinalRealData:
             if FinalRealData[phonenumber]["Password"] == password:
@@ -69,4 +84,4 @@ def gfg():
 
 if __name__ == "__main__":
     # app.run(host="0.0.0.0", port=8000)
-    app.run(host="0.0.0.0", port=8010)
+    app.run(host="0.0.0.0", port=8000)

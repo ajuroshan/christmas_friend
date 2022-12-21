@@ -41,11 +41,9 @@ correctData = {}
 for i in range(len(number_list3)):
     correctData[number_list3[i]] = realData[i]
 
-
 shuffledData = {}
 for i in range(len(number_list2)):
     shuffledData[number_list2[i]] = realData[i]
-
 
 # initializing dictionary
 test_dict = {"gfg": 1, "is": 7, "best": 8,
@@ -72,6 +70,5 @@ with open('FinalResult.csv', 'w') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=field_names)
     writer.writeheader()
     writer.writerows(my_list)
-
 
 
