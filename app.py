@@ -51,7 +51,7 @@ for i in range(len(GoogleFormDataNumbers)):
     # print(len(FinalShuffledData),i,len(ShuffledData))
     FinalShuffledData[GoogleFormDataNumbers[i]] = ShuffledData[i]
 
-print(FinalShuffledData["9746986389"])
+print(FinalRealData["9746986389"])
 print(FinalShuffledData["7907060696"])
 
 @app.route('/', methods =["GET", "POST"])
